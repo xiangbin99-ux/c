@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(){
+    char a[100]={0};
+    char b[100]={0};
+    
+    int x=1,y=1;
+    scanf("%s",a);
+    scanf("%s",b);
+    for(int i=0;a[i]!='\0';i++){
+      x *=(a[i]-'A'+1);
+    
+    }
+    for(int j=0;b[j]!='\0';j++){
+      y *=(b[j]-'A'+1);
+        
+    }
+    if(x%47==y%47){
+        printf("GO\n");
+    }else {
+        printf("STAY\n");
+    }
+    return 0;
+}
