@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+int main(){
+	char a[1000]={0};
+	fgets(a, sizeof(a), stdin);//零个人看得懂
+    a[strcspn(a, "\n")] = '\0';  //只知道能读空格
+	int t=0;
+	for(int i=0;a[i]!='\0';i++){
+		if(a[i]=='b'||a[i]=='e'||a[i]=='h'||a[i]=='k'||a[i]=='n'||a[i]=='q'||a[i]=='u'||a[i]=='x'){
+			t=t+2;
+		}else if(a[i]=='c'||a[i]=='f'||a[i]=='i'||a[i]=='l'||a[i]=='o'||a[i]=='r'||a[i]=='v'||a[i]=='y'){
+			t=t+3;
+		}else if(a[i]=='s'||a[i]=='z'){
+			t=t+4;
+		}else  {
+            t += 1;              
+        }
+	}
+	printf("%d",t);
+	
+	return 0;
+}
