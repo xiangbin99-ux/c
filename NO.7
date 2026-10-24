@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int M, N;
+    scanf("%d %d", &M, &N);
+
+    int count[10] = {0}; // 统计0~9出现次数，必须初始化为0
+
+    for (int i = M; i <= N; i++) {
+        int temp = i; // 用临时变量拆位，避免修改循环变量i
+        while (temp > 0) {
+            int digit = temp % 10; // 取出最低位
+            count[digit]++;        // 对应数码计数加1
+            temp /= 10;            // 去掉最低位
+        }
+    }
+
+    for (int j = 0; j < 10; j++) {
+        printf("%d ", count[j]);
+    }
+    return 0;
+}
